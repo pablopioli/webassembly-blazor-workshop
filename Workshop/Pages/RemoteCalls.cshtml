@@ -1,0 +1,27 @@
+﻿@page "/remotecalls"
+@inject HttpClient Http
+
+<h1>Llamadas remotas</h1>
+
+<input bind="@content" />
+
+<p>@content</p>
+
+<button onclick="@GetData">Llamada HTTP</button>
+
+<button onclick="@Cleandata">Limpiar</button>
+
+
+@functions {
+    string content = "";
+
+    async Task GetData()
+    {
+        content = await Http.GetStringAsync("/");
+    }
+
+    void Cleandata()
+    {
+        content = string.Empty;
+    }
+}

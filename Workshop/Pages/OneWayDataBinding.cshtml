@@ -1,0 +1,17 @@
+﻿@page "/oneway"
+
+<h1>One Way DataBinding</h1>
+
+<p>@content</p>
+
+<button class="btn btn-primary" onclick="@SetContent">Actualizar</button>
+
+
+@functions {
+string content = "";
+
+async Task SetContent()
+{
+    content = "Hola mundo";
+}
+}

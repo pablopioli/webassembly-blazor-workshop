@@ -1,0 +1,13 @@
+﻿@page "/interop"
+
+<h1>Interop</h1>
+
+<button class="btn btn-primary" onclick="@CallJs">Llamar Javascript</button>
+
+
+@functions {
+    void CallJs()
+    {
+        JSRuntime.Current.InvokeAsync<bool>("MostrarMensaje");
+    }
+}
